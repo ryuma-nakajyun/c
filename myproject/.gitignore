@@ -12,8 +12,8 @@ log/
 *.log
 
 # ===== Editor / IDE =====
-.vscode/
-*.code-workspace
+# .vscode/
+# *.code-workspace
 
 # ===== OS files =====
 .DS_Store

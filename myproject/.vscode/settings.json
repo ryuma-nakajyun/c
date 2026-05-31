@@ -1,0 +1,44 @@
+{
+    // ================================
+    // clangd 設定
+    // ================================
+    "clangd.path": "/usr/bin/clangd",
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed"
+    ],
+    // ================================
+    // マルチカーソル / 矩形選択の操作性向上
+    // ================================
+    // Alt が OS に奪われる環境向け（Linux など）
+    // Alt ではなく Ctrl/Cmd を複数カーソル修飾キーにする
+    "editor.multiCursorModifier": "ctrlCmd",
+    // 複数カーソルの貼り付け挙動を安定化
+    "editor.multiCursorPaste": "spread",
+    // ================================
+    // 視認性向上（矩形選択の範囲が見やすくなる）
+    // ================================
+    "editor.renderWhitespace": "all", // 空白を可視化
+    "editor.selectionHighlight": true, // 選択範囲を強調
+    "editor.cursorStyle": "line", // カーソルを線に
+    "editor.cursorBlinking": "smooth", // カーソル点滅を滑らかに
+    // ================================
+    // ターミナル設定
+    // ================================
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.scrollback": 50000,
+    // ================================
+    // フォーマッター設定（clang-format）
+    // ================================
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    // 保存時に自動フォーマット
+    "editor.formatOnSave": true
+}
