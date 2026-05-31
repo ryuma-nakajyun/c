@@ -1,10 +1,21 @@
 CC = gcc
-CFLAGS = -Iinclude -Wall -O2
-TARGET = build/myproject
-SRC = $(wildcard src/*.c)
+CFLAGS = -Wall -Wextra -Iinclude
+LDFLAGS =
+TARGET = myapp
 
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $@ $^
+SRC_DIR = src
+OBJ_DIR = build
+INC_DIR = include
+
+SRCS = $(wildcard $(SRC_DIR)/*.c)
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $(TARGET) $(LDFLAGS)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(TARGET)
+	rm -rf $(OBJ_DIR)/*.o $(TARGET)
