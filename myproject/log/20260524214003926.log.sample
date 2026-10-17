@@ -1,0 +1,4 @@
+2026-05-24T21:40:03.926 INFO system start
+2026-05-24T21:40:03.926 DEBUG debug message
+2026-05-24T21:40:03.926 WARN warning
+2026-05-24T21:40:03.926 ERROR error occurred
